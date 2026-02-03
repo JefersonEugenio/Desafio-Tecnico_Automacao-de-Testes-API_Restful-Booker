@@ -37,5 +37,15 @@
       <artifactId>rest-assured</artifactId>
       <version>6.0.0</version>
     </dependency>
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+      <version>1.18.42</version>
+    </dependency>
+    <dependency>
+      <groupId>tools.jackson.core</groupId>
+      <artifactId>jackson-databind</artifactId>
+      <version>3.0.3</version>
+    </dependency>
   </dependencies>
 </project>
