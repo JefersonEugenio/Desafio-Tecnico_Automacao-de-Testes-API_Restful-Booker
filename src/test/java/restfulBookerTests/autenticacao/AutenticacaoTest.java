@@ -49,6 +49,7 @@ public class AutenticacaoTest extends BaseTest {
                 .log().body()
                 .statusCode(200)
                 .body("reason", equalTo("Bad credentials"))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/autenticacao/RestfulBookerAutenticacaoSchemaInvalido.json"))
         ;
     }
 
@@ -64,6 +65,23 @@ public class AutenticacaoTest extends BaseTest {
                 .log().body()
                 .statusCode(200)
                 .body("reason", equalTo("Bad credentials"))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/autenticacao/RestfulBookerAutenticacaoSchemaInvalido.json"))
         ;
     }
+
+    @Test
+    public void autenticar_EndPointInvalido_RetornarComStatus404() {
+
+        RestAssured.given()
+                .spec(requestSpec)
+                .contentType(ContentType.JSON)
+            .when()
+                .post(AUTH+"qwert")
+            .then()
+                .log().body()
+                .statusCode(404)
+                .body(equalTo("Not Found"))
+        ;
+    }
+
 }
