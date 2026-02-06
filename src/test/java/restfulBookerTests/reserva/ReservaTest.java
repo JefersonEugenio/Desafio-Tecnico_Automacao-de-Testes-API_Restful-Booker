@@ -29,7 +29,7 @@ public class ReservaTest extends BaseTest {
         RestAssured.given()
                 .spec(requestSpec)
             .when()
-               .get(BOOKING+"/1")
+               .get(BOOKING+"/2")
             .then()
                 .log().body()
                 .statusCode(200)
