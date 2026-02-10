@@ -1,12 +1,12 @@
 package restfulBookerTests.reserva;
 
 import baseTests.BaseTest;
+import fabricas.RestfulBookerReservaFabrica;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import modelos.reserva.ReservaRequest;
 import org.junit.jupiter.api.Test;
-import restfulBookerTests.fabricas.RestfulBookerReservaFabrica;
-import restfulBookerTests.modelos.reserva.ReservaRequest;
 
 import static org.hamcrest.Matchers.equalTo;
 
