@@ -1,7 +1,7 @@
-package restfulBookerTests.fabricas;
+package fabricas;
 
-import restfulBookerTests.modelos.reserva.ReservaDataRequest;
-import restfulBookerTests.modelos.reserva.ReservaRequest;
+import modelos.reserva.ReservaDataRequest;
+import modelos.reserva.ReservaRequest;
 import utils.FakerDadoReserva;
 
 import java.time.LocalDateTime;
@@ -16,7 +16,7 @@ public class RestfulBookerReservaFabrica {
         String formattedTime = dateTimeFormatter.format(localDateTime);
 
         ReservaDataRequest reservaDataRequest = new ReservaDataRequest();
-        reservaDataRequest.setCheckin(FakerDadoReserva.getFakerCheckIn());
+        reservaDataRequest.setCheckin(FakerDadoReserva.getFakerCheckIn().toString());
         reservaDataRequest.setCheckout(formattedTime);
 
         ReservaRequest reservaRequest = new ReservaRequest();

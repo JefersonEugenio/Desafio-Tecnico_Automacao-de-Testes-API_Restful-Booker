@@ -1,4 +1,4 @@
-package restfulBookerTests.modelos.reserva;
+package modelos.reserva;
 
 import lombok.Data;
 

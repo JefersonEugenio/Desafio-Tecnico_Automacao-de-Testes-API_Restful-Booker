@@ -4,8 +4,8 @@ import baseTests.BaseTest;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
+import modelos.autenticacao.AuthRequest;
 import org.junit.jupiter.api.Test;
-import restfulBookerTests.modelos.autenticacao.AuthRequest;
 
 import static org.hamcrest.Matchers.equalTo;
 import static org.hamcrest.Matchers.notNullValue;

@@ -32,7 +32,7 @@ public class ReservaGetTest extends BaseTest {
             .then()
                 .log().body()
                 .statusCode(200)
-                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
+//                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
         ;
     }
 

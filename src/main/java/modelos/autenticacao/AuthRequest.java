@@ -1,4 +1,4 @@
-package restfulBookerTests.modelos.autenticacao;
+package modelos.autenticacao;
 
 import lombok.Data;
 
