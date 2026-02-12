@@ -18,7 +18,7 @@ public class ReservaDeleteTest extends BaseTest {
                 .spec(requestSpec)
                 .cookie("token", token)
             .when()
-                .delete(BOOKING+"/1")
+                .delete(BOOKING+"/2")
             .then()
                 .log().body()
                 .statusCode(201)
