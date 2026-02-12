@@ -1,7 +1,9 @@
 package restfulBookerTests.reserva;
 
 import baseTests.BaseTest;
+import fabricas.RestfulBookerReservaFabrica;
 import io.restassured.RestAssured;
+import io.restassured.http.ContentType;
 import org.junit.jupiter.api.Test;
 import utils.Token;
 
@@ -12,13 +14,25 @@ public class ReservaDeleteTest extends BaseTest {
     @Test
     public void reserva_DeleteId_RetornarComStatus201() {
 
+        int bookingId = RestAssured.given()
+                .spec(requestSpec)
+                .contentType(ContentType.JSON)
+                .body(RestfulBookerReservaFabrica.criarReserva())
+            .when()
+                .post(BOOKING)
+            .then()
+                .log().body()
+                .statusCode(200)
+                .extract()
+                .path("bookingid");
+
         String token = Token.autenticar_CriarEObterToken();
 
         RestAssured.given()
                 .spec(requestSpec)
                 .cookie("token", token)
             .when()
-                .delete(BOOKING+"/2")
+                .delete(BOOKING+"/"+bookingId)
             .then()
                 .log().body()
                 .statusCode(201)
