@@ -22,7 +22,7 @@ public class ReservaPostTest extends BaseTest {
     @Test
     public void reserva_CriarReserva_RetornarComStatus200() throws JsonProcessingException {
 
-        ExtentReportManager.logInfoDetails("Executando teste: Listar todas as reservas");
+        ExtentReportManager.logInfoDetails("Executando teste: Criar reserva com token");
         ExtentReportManager.logInfoDetails("Request:");
 
         String requestJson = new ObjectMapper()
