@@ -39,7 +39,7 @@ public class ReservaPutTest extends BaseTest {
         ReservaRequest reservaRequest = new ReservaRequest();
         reservaRequest.setFirstname("Jeferson");
         reservaRequest.setLastname("Eugenio");
-        reservaRequest.setTotalprice(1000);
+        reservaRequest.setTotalprice(1000.0);
         reservaRequest.setDepositpaid(true);
         reservaRequest.setBookingdates(reservaDataRequest);
         reservaRequest.setAdditionalneeds("Quadra FUTSAL");
@@ -94,7 +94,7 @@ public class ReservaPutTest extends BaseTest {
         ReservaRequest reservaRequest = new ReservaRequest();
         reservaRequest.setFirstname("Jeferson");
         reservaRequest.setLastname("Eugenio");
-        reservaRequest.setTotalprice(1000);
+        reservaRequest.setTotalprice(1000.0);
         reservaRequest.setDepositpaid(true);
         reservaRequest.setBookingdates(reservaDataRequest);
         reservaRequest.setAdditionalneeds("Quadra FUTSAL");

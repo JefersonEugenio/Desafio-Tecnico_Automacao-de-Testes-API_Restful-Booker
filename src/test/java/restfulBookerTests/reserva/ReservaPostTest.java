@@ -149,7 +149,7 @@ public class ReservaPostTest extends BaseTest {
         ExtentReportManager.logInfoDetails("Request:");
 
         ReservaRequest reservaRequest = RestfulBookerReservaFabrica.criarReserva();
-        reservaRequest.setTotalprice(-100);
+        reservaRequest.setTotalprice(-100.0);
 
         String requestJson = new ObjectMapper()
                 .writerWithDefaultPrettyPrinter()
