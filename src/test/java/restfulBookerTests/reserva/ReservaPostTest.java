@@ -9,6 +9,7 @@ import io.restassured.http.ContentType;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
 import modelos.reserva.ReservaRequest;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import report.ExtentReportManager;
@@ -17,6 +18,7 @@ import report.Setup;
 import static org.hamcrest.Matchers.equalTo;
 
 @ExtendWith(Setup.class)
+@Tag("post")
 public class ReservaPostTest extends BaseTest {
 
     @Test

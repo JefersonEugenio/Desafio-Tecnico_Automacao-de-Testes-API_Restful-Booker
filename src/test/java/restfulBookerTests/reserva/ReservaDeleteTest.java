@@ -5,6 +5,7 @@ import fabricas.RestfulBookerReservaFabrica;
 import io.restassured.RestAssured;
 import io.restassured.http.ContentType;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import report.ExtentReportManager;
@@ -14,6 +15,7 @@ import utils.Token;
 import static org.hamcrest.Matchers.equalTo;
 
 @ExtendWith(Setup.class)
+@Tag("delete")
 public class ReservaDeleteTest extends BaseTest {
 
     @Test
