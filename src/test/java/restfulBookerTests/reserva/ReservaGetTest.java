@@ -6,6 +6,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import io.restassured.RestAssured;
 import io.restassured.module.jsv.JsonSchemaValidator;
 import io.restassured.response.Response;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import report.ExtentReportManager;
@@ -17,6 +18,7 @@ import java.util.Map;
 import static org.hamcrest.Matchers.equalTo;
 
 @ExtendWith(Setup.class)
+@Tag("get")
 public class ReservaGetTest extends BaseTest {
 
     @Test
@@ -58,18 +60,18 @@ public class ReservaGetTest extends BaseTest {
     public void reserva_ComId_RetornarComStatus200() {
 
         ExtentReportManager.logInfoDetails("Executando teste: Busca reserva pelo ID existente");
-        ExtentReportManager.logInfoDetails("Endpoint: " + BOOKING + "/2");
+        ExtentReportManager.logInfoDetails("Endpoint: " + BOOKING + "/11");
 
         Response response =
         RestAssured.given()
                 .spec(requestSpec)
             .when()
-               .get(BOOKING+"/2");
+               .get(BOOKING+"/11");
         response
             .then()
                 .log().body()
                 .statusCode(200)
-//                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
         ;
 
         ExtentReportManager.logInfoDetails("Response Body:");

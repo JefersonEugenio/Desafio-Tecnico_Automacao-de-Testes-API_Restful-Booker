@@ -10,6 +10,7 @@ import io.restassured.response.Response;
 import modelos.reserva.ReservaDataRequest;
 import modelos.reserva.ReservaRequest;
 import modelos.reserva.ReservaResponse;
+import org.junit.jupiter.api.Tag;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
 import report.ExtentReportManager;
@@ -21,6 +22,7 @@ import java.time.LocalDate;
 import static org.hamcrest.Matchers.equalTo;
 
 @ExtendWith(Setup.class)
+@Tag("put")
 public class ReservaPutTest extends BaseTest {
 
     @Test
