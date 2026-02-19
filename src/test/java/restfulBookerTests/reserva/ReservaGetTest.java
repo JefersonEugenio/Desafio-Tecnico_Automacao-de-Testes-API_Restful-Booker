@@ -57,22 +57,21 @@ public class ReservaGetTest extends BaseTest {
     }
 
     @Test
-    @Tag("fulano")
     public void reserva_ComId_RetornarComStatus200() {
 
         ExtentReportManager.logInfoDetails("Executando teste: Busca reserva pelo ID existente");
-        ExtentReportManager.logInfoDetails("Endpoint: " + BOOKING + "/2");
+        ExtentReportManager.logInfoDetails("Endpoint: " + BOOKING + "/11");
 
         Response response =
         RestAssured.given()
                 .spec(requestSpec)
             .when()
-               .get(BOOKING+"/2");
+               .get(BOOKING+"/11");
         response
             .then()
                 .log().body()
                 .statusCode(200)
-//                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
+                .body(JsonSchemaValidator.matchesJsonSchemaInClasspath("schemas/reserva/RestfulBookerReservaIdSchema.json"))
         ;
 
         ExtentReportManager.logInfoDetails("Response Body:");
